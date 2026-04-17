@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الطلاب</title>
+</head>
+<body>
+    <h1>إدارة بيانات الطلاب</h1>
+
+    <form id="studentForm">
+        <label for="studentName">اسم الطالب:</label>
+        <input type="text" id="studentName" required>
+
+        <label for="studentId">رقم الطالب:</label>
+        <input type="text" id="studentId" required>
+
+        <input type="submit" value="إضافة الطالب">
+    </form>
+
+    <h2>قائمة الطلاب</h2>
+    <ul id="studentList"></ul>
+
+    <script>
+        document.getElementById('studentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('studentName').value;
+            const id = document.getElementById('studentId').value;
+            const listItem = document.createElement('li');
+            listItem.textContent = `اسم الطالب: ${name} - رقم الطالب: ${id}`;
+            document.getElementById('studentList').appendChild(listItem);
+            this.reset();
+        });
+    </script>
+</body>
+</html>
