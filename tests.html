@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الاختبارات</title>
+    <style>
+        body { font-family: Arial, sans-serif; direction: rtl; }
+        h1 { color: #333; }
+        label { display: block; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>إدارة الاختبارات</h1>
+    <form id="test-management-form">
+        <label for="test-name">اسم الاختبار:</label>
+        <input type="text" id="test-name" name="test-name" required>
+
+        <label for="test-description">وصف الاختبار:</label>
+        <textarea id="test-description" name="test-description" required></textarea>
+
+        <label for="test-date">تاريخ الاختبار:</label>
+        <input type="date" id="test-date" name="test-date" required>
+
+        <button type="submit">إنشاء الاختبار</button>
+    </form>
+    <div id="test-list">
+        <h2>الاختبارات الحالية</h2>
+        <ul id="tests">
+            <!-- قائمة الاختبارات ستظهر هنا -->
+        </ul>
+    </div>
+
+    <script>
+        document.getElementById('test-management-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            const testName = document.getElementById('test-name').value;
+            const testDescription = document.getElementById('test-description').value;
+            const testDate = document.getElementById('test-date').value;
+            const testList = document.getElementById('tests');
+
+            const listItem = document.createElement('li');
+            listItem.textContent = `اسم الاختبار: ${testName}, الوصف: ${testDescription}, التاريخ: ${testDate}`;
+            testList.appendChild(listItem);
+
+            // Reset form fields
+            document.getElementById('test-management-form').reset();
+        });
+    </script>
+</body>
+</html>
