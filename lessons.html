@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الدروس</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>إدارة الدروس</h1>
+    </header>
+    <main>
+        <section id="add-lesson">
+            <h2>إضافة درس</h2>
+            <form id="lesson-form">
+                <label for="lesson-title">عنوان الدرس:</label>
+                <input type="text" id="lesson-title" name="lesson-title" required>
+                <label for="lesson-content">محتوى الدرس:</label>
+                <textarea id="lesson-content" name="lesson-content" required></textarea>
+                <button type="submit">إضافة</button>
+            </form>
+        </section>
+        <section id="lesson-list">
+            <h2>قائمة الدروس</h2>
+            <ul id="lessons">
+                <!-- الدروس ستضاف هنا dynamically -->
+            </ul>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
